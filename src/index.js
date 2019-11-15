@@ -12,7 +12,7 @@ import { useState, useCallback } from 'react'
  * 
  * how to use
  * const someFunction = () => console.log('this will be trigged once when pressing enter')
- * const { onKeyDown, onKeyUp } = useKeyDownOnce(someFunction, 'Enter')
+ * const [onKeyDown, onKeyUp] = useKeyDownOnce(someFunction, 'Enter')
  * 
  * return (
  *      <SomeComponent
