@@ -39,7 +39,7 @@ function MyComponent() {
 }
 ```
 
-With this way you don't have to use mouse to click submit button, instead you just press Enter to trigger submit function.
+With this way you don't have to use mouse to click submit button, instead you just press Enter to trigger submit function when you finished typing password.
 
 But normally if you press it too long, it will trigger submit function multiple times. So this is when __useKeyDownOnce__ comes into play.
 
