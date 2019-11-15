@@ -44,6 +44,6 @@ With this way you don't have to use mouse to click submit button, instead you ju
 But normally if you press it too long, it will trigger submit function multiple times. So this is when __useKeyDownOnce__ comes into play.
 
 # Why this library
-I just start web developer career and I find myself wrote this function multiple times. So I decide to make it as a library. Maybe there's a library that already solve this problem but I still prefer my minimal version of my code. On top of that I just want to try to publish a library to npm registry to get some new feelings about coding.
+I just start web developer career and I find myself wrote this function multiple times. So I decide to make it as a library. Maybe there's a library that already solve this problem but I still prefer my minimalistic version of my code. On top of that I just want to try to publish a library to npm registry to get some new feelings about coding.
 
 In the future, I may use other library (if i find it interesting enough) instead of maintaining my own version of library.
