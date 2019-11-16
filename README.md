@@ -36,7 +36,10 @@ function MyComponent() {
         Submit
       </button>
     </div>
+  )
 }
+
+export default MyComponent
 ```
 
 With this way you don't have to use mouse to click submit button, instead you just press Enter to trigger submit function when you finished typing password.
