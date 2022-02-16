@@ -10,33 +10,34 @@ import React, { useState } from 'react'
 import useKeyDownOnce from '@kaisukez/use-key-down-once'
 
 function MyComponent() {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  
-  const submit = () => {
-    // api.login(username, password)
-  }
-  
-  const [onKeyDown, onKeyUp] = useKeyDownOnce(submit, 'Enter')
-  
-  return (
-    <div>
-      <input
-        value={username}
-        onChange={event => setUsername(event.target.value)}
-      />
-      <input
-        type='password'
-        value={password}
-        onChange={event => setPassword(event.target.value)}
-        onKeyDown={onKeyDown}
-        onKeyUp={onKeyUp}
-      />
-      <button onClick={submit}>
-        Submit
-      </button>
-    </div>
-  )
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    
+    const submit = () => {
+        console.log('This will be trigged once when pressing enter, no matter how long you press.')
+        // api.login(username, password)
+    }
+    
+    const { onKeyDown, onKeyUp } = useKeyDownOnce(submit, 'Enter')
+    
+    return (
+        <div>
+            <input
+                value={username}
+                onChange={event => setUsername(event.target.value)}
+            />
+            <input
+                type='password'
+                value={password}
+                onChange={event => setPassword(event.target.value)}
+                onKeyDown={onKeyDown}
+                onKeyUp={onKeyUp}
+            />
+            <button onClick={submit}>
+                Submit
+            </button>
+        </div>
+    )
 }
 
 export default MyComponent
