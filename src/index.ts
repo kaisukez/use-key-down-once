@@ -1,4 +1,4 @@
-import { useState, useCallback, KeyboardEventHandler } from 'react'
+import { useRef, useCallback, KeyboardEventHandler } from 'react'
 
 interface useKeyDownOnceResult {
     onKeyDown: KeyboardEventHandler<HTMLInputElement>
@@ -6,18 +6,18 @@ interface useKeyDownOnceResult {
 }
 
 function useKeyDownOnce(func: KeyboardEventHandler, key: KeyboardEvent['key']): useKeyDownOnceResult {
-    const [isKeyDown, setIsKeyDown] = useState<Boolean>(false)
+    const isKeyDown = useRef(false)
 
-    const onKeyDown = useCallback(event => {
-        if (event.key === key && !isKeyDown) {
+    const onKeyDown = useCallback<KeyboardEventHandler<HTMLInputElement>>(event => {
+        if (event.key === key && !isKeyDown.current) {
             func(event)
-            setIsKeyDown(true)
+            isKeyDown.current = true
         }
-    }, [func, key, isKeyDown])
+    }, [func, key])
 
-    const onKeyUp = useCallback(event => {
+    const onKeyUp = useCallback<KeyboardEventHandler<HTMLInputElement>>(event => {
         if (event.key === key) {
-            setIsKeyDown(false)
+            isKeyDown.current = false
         }
     }, [key])
 
