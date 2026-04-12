@@ -1,3 +1,6 @@
+# @kaisukez/use-key-down-once
+
+> [!WARNING]
 > **Archived.** In the AI era, you can just generate this kind of utility directly in your project. Also, the browser already has a native solution — `event.repeat` is `true` for repeated keydown events, so `onKeyDown={e => !e.repeat && submit(e)}` is all you need.
 
 # Install
